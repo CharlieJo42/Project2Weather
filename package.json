@@ -1,0 +1,22 @@
+{
+  "name": "project2weather",
+  "version": "1.0.0",
+  "description": "Base tutorial followed along from: https://www.youtube.com/watch?v=dDjzTDN3cy8",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlieJo42/Project2Weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlieJo42/Project2Weather/issues"
+  },
+  "homepage": "https://github.com/CharlieJo42/Project2Weather#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
