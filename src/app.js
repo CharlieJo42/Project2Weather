@@ -1,6 +1,7 @@
 const path = require("path")
 const express = require("express")
 const app = express()
+const router = require("./router")
 
 
 
@@ -10,19 +11,7 @@ app.use(express.static("public"))
 app.set("views", "views")
 app.set("view engine", "hbs") 
 
-
-app.get("/", (req, res) => {
-    res.render("index", {
-        title: "Express Weather Finder"
-    })
-})
-
-
-app.get("/about", (req, res) => {
-    res.render("about")
-})
-
-
+app.use("/", router)
 
 
 
