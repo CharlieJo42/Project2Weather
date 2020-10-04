@@ -1,6 +1,8 @@
 const axios = require("axios")
 const API_KEY = "0b0424f8a2f7eb5f9c79a3066c2e0983"
 
+const Weather = require("../model/Weather")
+
 exports.renderHomePage = (req, res) => {
     res.render("index")
 }
@@ -8,11 +10,29 @@ exports.renderHomePage = (req, res) => {
 exports.getWeather = (req, res) => {
     const city = req.body.city
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+    
+    const weather = new Weather(req.body.city)
+    weather.validateUserInput()
+
+
+    if (weather.errors.length) {
+        res.render("index", {
+            error: weather.errors.toString()
+        })
+    } else {
+    
     axios.get(url).then((response) => {
-        console.log(response)
+        const { temp: temperature } = response.data.main
+        const { name: location } = response.data
+        res.render("index", {
+            weather: `It is approximately ${temperature} degrees in ${location}.`
+        })
+        
     }).catch((error) => {
         console.log(error)
     })
+
+}
 }
 
 exports.renderAboutPage = (req, res) => {
