@@ -10,15 +10,21 @@ app.use(express.static("public"))
 app.set("views", "views")
 app.set("view engine", "hbs") 
 
-app.get("/", (req, res) => {
-    res.send("My first express web page!!!!")
-})
 
+app.get("/", (req, res) => {
+    res.render("index", {
+        title: "Express Weather Finder"
+    })
+})
 
 
 app.get("/about", (req, res) => {
-    res.send("My business is so cool!!!!")
+    res.render("about")
 })
+
+
+
+
 
 app.listen(3000, () => {
     console.log("The server is now running on Port 3000")
