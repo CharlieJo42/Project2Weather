@@ -15,3 +15,5 @@ https://www.youtube.com/watch?v=ldYcgPKEZC8&t=2652s
 
 
 To run React, run “node index.js” on localhost:3000. 
+
+Logistical issue: The weather app runs on its own and the database CRUD list runs on its own, but I have not yet figured out how to link the two. 
