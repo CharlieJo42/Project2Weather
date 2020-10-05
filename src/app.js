@@ -15,7 +15,7 @@ app.use("/", router)
 
 
 
-app.listen(3000, () => {
-    console.log("The server is now running on Port 3000")
+app.listen(3001, () => {
+    console.log("The server is now running on Port 3001")
 })
 
