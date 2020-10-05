@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 
-app.post("/city", (req, res) => {
+app.post("/city", async (req, res) => {
     try {
 
      const { location } = req.body;
@@ -21,7 +21,7 @@ app.post("/city", (req, res) => {
 
 app.get("/city", async(req, res) => {
     try {
-const allCities - await pool.query("SELECT * FROM city");
+const allCities = await pool.query("SELECT * FROM city");
     res.json(allCities.rows);
     } catch (err) {
         console.error(err.message)
