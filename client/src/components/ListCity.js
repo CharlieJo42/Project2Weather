@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
+import EditCity from "./EditCity";
+
 const ListCity = () => {
 
     const [city, setCity] = useState([]);
@@ -48,7 +50,8 @@ const ListCity = () => {
       {city.map(city => (
           <tr key={city.city_id}>
               <td>{city.description}</td>
-              <td>Edit</td>
+              <td><EditCity city={city} />
+              </td>
               <td><button className="btn btn-danger" onCLick={() => deleteCity(city.city_id)}>Delete</button></td>
           </tr>
       ))}
